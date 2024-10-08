@@ -4,3 +4,18 @@ INSERT INTO employee (first_name, last_name, email, hire_date, job_title, salary
 ('Emily', 'Johnson', 'emily.johnson@example.com', '2020-09-30', 'Data Analyst', 65000.00),
 ('Michael', 'Brown', 'michael.brown@example.com', '2019-12-01', 'HR Specialist', 60000.00),
 ('Sarah', 'Davis', 'sarah.davis@example.com', '2023-03-15', 'UX Designer', 70000.00);
+('Sarah', 'Brown', 'sarah.brown@example.com', '2022-05-16', 'UX Designer', 70000.00),
+('Chris', 'Garcia', 'chris.garcia@example.com', '2020-11-11', 'Network Administrator', 72000.00),
+('Jessica', 'Martinez', 'jessica.martinez@example.com', '2019-04-29', 'HR Specialist', 65000.00),
+('Daniel', 'Rodriguez', 'daniel.rodriguez@example.com', '2021-10-21', 'Database Administrator', 88000.00),
+('Laura', 'Hernandez', 'laura.hernandez@example.com', '2023-02-14', 'Marketing Manager', 87000.00),
+('Robert', 'Lee', 'robert.lee@example.com', '2016-09-30', 'Web Developer', 78000.00),
+('Karen', 'Walker', 'karen.walker@example.com', '2018-01-19', 'Content Writer', 62000.00),
+('James', 'Hall', 'james.hall@example.com', '2020-03-25', 'Sales Executive', 74000.00),
+('Patricia', 'Allen', 'patricia.allen@example.com', '2019-07-15', 'Accountant', 67000.00),
+('Michael', 'Young', 'michael.young@example.com', '2018-06-10', 'Quality Assurance', 71000.00),
+('Linda', 'King', 'linda.king@example.com', '2022-04-23', 'Operations Manager', 95000.00),
+('Charles', 'Wright', 'charles.wright@example.com', '2021-09-05', 'Product Manager', 92000.00),
+('Elizabeth', 'Scott', 'elizabeth.scott@example.com', '2023-01-08', 'Customer Support', 58000.00),
+('Joseph', 'Green', 'joseph.green@example.com', '2020-12-11', 'IT Support', 65000.00),
+('Susan', 'Adams', 'susan.adams@example.com', '2023-06-30', 'Research Analyst', 70000.00);
