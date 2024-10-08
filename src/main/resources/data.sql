@@ -3,7 +3,7 @@ INSERT INTO employee (first_name, last_name, email, hire_date, job_title, salary
 ('Jane', 'Smith', 'jane.smith@example.com', '2021-05-23', 'Project Manager', 85000.00),
 ('Emily', 'Johnson', 'emily.johnson@example.com', '2020-09-30', 'Data Analyst', 65000.00),
 ('Michael', 'Brown', 'michael.brown@example.com', '2019-12-01', 'HR Specialist', 60000.00),
-('Sarah', 'Davis', 'sarah.davis@example.com', '2023-03-15', 'UX Designer', 70000.00);
+('Sarah', 'Davis', 'sarah.davis@example.com', '2023-03-15', 'UX Designer', 70000.00),
 ('Sarah', 'Brown', 'sarah.brown@example.com', '2022-05-16', 'UX Designer', 70000.00),
 ('Chris', 'Garcia', 'chris.garcia@example.com', '2020-11-11', 'Network Administrator', 72000.00),
 ('Jessica', 'Martinez', 'jessica.martinez@example.com', '2019-04-29', 'HR Specialist', 65000.00),
