@@ -27,6 +27,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 @RestController
 @RequestMapping("/api/")
 @Tag(name = "Employee Management", description = "APIs for managing employees")
+@CrossOrigin(origins = "*")
 public class EmployeeCrudController {
 
     @Autowired
