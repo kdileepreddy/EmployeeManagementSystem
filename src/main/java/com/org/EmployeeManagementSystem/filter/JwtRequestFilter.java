@@ -43,7 +43,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
         try {
             String path = request.getRequestURI();
-            if (EXCLUDED_PATHS.contains(path)) {
+            if (EXCLUDED_PATHS.contains(path) || path.startsWith("/swagger-ui/") || path.startsWith("/v3/api-docs")) {
                 chain.doFilter(request, response);
                 return; // Skip JWT processing for these endpoints
             }
