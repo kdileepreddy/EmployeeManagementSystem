@@ -21,11 +21,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Parameter;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
 @Tag(name = "Authentication", description = "Authentication API")
-@CrossOrigin(origins = "*")
 public class Authcontroller {
     @Autowired
     private UserRepository userRepository;

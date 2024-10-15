@@ -41,16 +41,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
-     @Bean
-     public CorsConfigurationSource corsConfigurationSource() {
-         CorsConfiguration corsConfig = new CorsConfiguration();
-         corsConfig.addAllowedOrigin("*");
-         corsConfig.addAllowedMethod("*");
-         corsConfig.addAllowedHeader("Authorization");
-         corsConfig.setAllowCredentials(true);
-         corsConfig.applyPermitDefaultValues();
-         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-         source.registerCorsConfiguration("/**", corsConfig);
-         return source;
-     }
+    //  @Bean
+    //  public CorsConfigurationSource corsConfigurationSource() {
+    //      CorsConfiguration corsConfig = new CorsConfiguration();
+    //      corsConfig.addAllowedOrigin("*");
+    //      corsConfig.addAllowedMethod("*");
+    //      corsConfig.addAllowedHeader("*");
+    //      corsConfig.setAllowCredentials(true);
+    //      corsConfig.applyPermitDefaultValues();
+    //      UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+    //      source.registerCorsConfiguration("/**", corsConfig);
+    //      return source;
+    //  }
 }
