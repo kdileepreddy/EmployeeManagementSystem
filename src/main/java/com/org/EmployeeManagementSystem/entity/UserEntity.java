@@ -30,7 +30,14 @@ public class UserEntity {
     @Column(name = "is_active")
     private Boolean isActive;
 
+    @Column(name = "role")
+    private String role;
+
     // Getters and Setters
+
+
+
+
 
     public Long getUserId() {
         return userId;
@@ -86,5 +93,13 @@ public class UserEntity {
 
     public void setIsActive(Boolean isActive) {
         this.isActive = isActive;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

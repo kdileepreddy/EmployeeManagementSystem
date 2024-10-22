@@ -54,6 +54,7 @@ public class Authcontroller {
         user.setPasswordHash(passwordEncoder.encode(loginRequest.getPassword()));
         user.setCreatedAt(LocalDateTime.now());
         user.setIsActive(true);
+        user.setRole(loginRequest.getRole());
         UserEntity savedUser = userRepository.save(user);
         return ResponseEntity.ok(savedUser);
     }
@@ -71,7 +72,7 @@ public class Authcontroller {
             user.setLastLogin(LocalDateTime.now());
             userRepository.save(user);
             String expirationTime = jwtUtil.extractExpirationDate(token).toString();
-            LoginResponse response = new LoginResponse(token, user.getUsername(), expirationTime);
+            LoginResponse response = new LoginResponse(token, user.getUsername(), expirationTime, user.getRole());
             return ResponseEntity.ok().body(response);
         }
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");

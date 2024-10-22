@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+
 import com.org.EmployeeManagementSystem.service.EmployeeService;
 import com.org.EmployeeManagementSystem.model.Employee;
 import java.util.List;
@@ -40,6 +42,7 @@ public class EmployeeCrudController {
         @ApiResponse(responseCode = "401", description = "Unauthorized, invalid or missing token")
     })
     @GetMapping("/getAllEmployees")
+    @PreAuthorize("hasAnyRole('HRADMIN','MANAGER')")
     public ResponseEntity<List<Employee>> getAllEmployees(@Parameter(description = "JWT token", required = true) @RequestHeader("Authorization") String token) {
         List<Employee> employees = employeeService.getAllEmployees();
         return new ResponseEntity<>(employees, HttpStatus.OK);
@@ -53,6 +56,7 @@ public class EmployeeCrudController {
         @ApiResponse(responseCode = "401", description = "Unauthorized, invalid or missing token")
     })
     @GetMapping("/employee/{id}")
+    @PreAuthorize("hasAnyRole('HRADMIN','MANAGER')")
     public ResponseEntity<Employee> getEmployeeById(@Parameter(description = "JWT token", required = true) @RequestHeader("Authorization") String token,
                                                     @Parameter(description = "ID of the employee to retrieve") @PathVariable Integer id) {
         Employee employee = employeeService.getEmployeeById(id);
@@ -67,6 +71,7 @@ public class EmployeeCrudController {
         @ApiResponse(responseCode = "401", description = "Unauthorized, invalid or missing token")
     })
     @PostMapping("/registerEmployee")
+    @PreAuthorize("hasRole('HRADMIN')")
     public ResponseEntity<Employee> createEmployee(@Parameter(description = "JWT token", required = true) @RequestHeader("Authorization") String token,
                                                    @RequestBody Employee employee) {
         Employee createdEmployee = employeeService.createEmployee(employee);
@@ -82,6 +87,7 @@ public class EmployeeCrudController {
         @ApiResponse(responseCode = "401", description = "Unauthorized, invalid or missing token")
     })
     @PutMapping("/updateEmployee/{id}")
+    @PreAuthorize("hasAnyRole('HRADMIN','MANAGER')")
     public ResponseEntity<Employee> updateEmployee(@Parameter(description = "JWT token", required = true) @RequestHeader("Authorization") String token,
                                                    @Parameter(description = "ID of the employee to update") @PathVariable Integer id,
                                                    @RequestBody Employee employee) {
@@ -96,6 +102,7 @@ public class EmployeeCrudController {
         @ApiResponse(responseCode = "401", description = "Unauthorized, invalid or missing token")
     })
     @DeleteMapping("/deleteEmployee/{id}")
+    @PreAuthorize("hasRole('HRADMIN')")
     public ResponseEntity<Void> deleteEmployee(@Parameter(description = "JWT token", required = true) @RequestHeader("Authorization") String token,
                                                @Parameter(description = "ID of the employee to delete") @PathVariable Integer id) {
         employeeService.deleteEmployee(id);
